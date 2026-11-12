@@ -1,0 +1,60 @@
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+#
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
+# 放置在 analysis_options.yaml 文件顶部
+formatter:
+  page_width: 100 # 或者你团队商定的其他值，例如 100 或 120
+  trailing_commas: preserve
+
+analyzer:
+  errors:
+    file_names: ignore
+    must_be_immutable: ignore
+    non_constant_identifier_names: ignore
+  exclude:
+    # 本地 path 插件自带的 example/test，不在主工程 package 图内，排除分析
+    - packages/**/example/**
+    - packages/**/test/**
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  # The lint rules applied to this project can be customized in the
+  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # included above or to enable additional rules. A list of all available lints
+  # and their documentation is published at https://dart.dev/lints.
+  #
+  # Instead of disabling a lint rule for the entire project in the
+  # section below, it can also be suppressed for a single line of code
+  # or a specific dart file by using the `// ignore: name_of_lint` and
+  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
+  # producing the lint.
+  rules:
+    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
+    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    
+    # const 相关的 lint 规则
+    prefer_const_constructors: true         # 建议使用 const 构造函数
+    prefer_const_constructors_in_immutables: true  # 在不可变类中建议使用 const 构造函数
+    prefer_const_declarations: true         # 建议使用 const 声明
+    prefer_const_literals_to_create_immutables: true  # 建议使用 const 字面量创建不可变对象
+    unnecessary_const: true                 # 移除不必要的 const
+    unnecessary_new: true                   # 移除不必要的 new 关键字
+    
+    # import 排序相关的 lint 规则
+    directives_ordering: true               # 控制 import/export/part 的排序
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options

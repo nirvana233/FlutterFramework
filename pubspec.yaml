@@ -1,0 +1,108 @@
+name: flutter_framework
+description: "Flutter 项目基础框架：路由、多语言、网络、本地存储、通用组件。"
+# 私有项目，禁止发布到 pub.dev
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.0
+  flutter: ">=3.44.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #国际化
+  flutter_localizations:
+    sdk: flutter
+
+  #全局状态，多语言，路由
+  get: 4.7.3
+  #网络请求
+  dio: 5.11.0
+  #网络请求重试
+  retry: ^3.1.2
+  #网络图片加载缓存
+  cached_network_image: 3.4.1
+  #文件缓存管理
+  flutter_cache_manager: ^3.4.1
+  #图片缓存复用 HttpClient
+  http: ^1.6.0
+  #json模型转换：为数据模型类添加注解，配合 build_runner + json_serializable 生成序列化代码
+  json_annotation: ^4.9.0
+  #时间格式，本地化等设置
+  intl: ^0.20.2
+  #沙盒存储
+  shared_preferences: ^2.3.2
+  #iOS 和 Android 平台上安全地存储键值对, 永久存储（比如deviceId）
+  flutter_secure_storage: ^9.2.4
+  #hive数据库
+  hive_ce: ^2.19.3
+  #文件路径
+  path_provider: ^2.1.5
+  #md5 校验（图片缓存文件名）
+  crypto: 3.0.7
+  #用于获取有关应用程序的信息，例如版本号、构建号、应用名称等
+  package_info_plus: ^8.0.2
+  #设备信息
+  device_info_plus: ^11.3.0
+  #android id
+  android_id: ^0.4.0
+  #隐私权限管理
+  permission_handler: ^12.0.0+1
+  #打开系统设置
+  app_settings: ^6.1.1
+  #用于处理Android intent（打开邮箱等）
+  android_intent_plus: ^5.0.0
+  #系统路由跳转
+  url_launcher: ^6.3.1
+  #webview（WebViewPage 直接使用平台实现的参数）
+  webview_flutter: ^4.13.0
+  webview_flutter_android: ^4.14.1
+  webview_flutter_wkwebview: ^3.26.1
+  #屏幕适配
+  flutter_screenutil: ^5.9.3
+  #加载指示器（loading indicator）
+  flutter_easyloading: ^3.0.5
+  #toast
+  bot_toast: ^4.1.3
+  #日志
+  talker_flutter: ^4.9.1
+  #json动画
+  lottie: ^3.3.1
+  #svg
+  flutter_svg: ^2.2.3
+  #防止截屏
+  no_screenshot: ^0.3.2-beta.3
+  #设备预览（调试）
+  device_preview: 1.3.1
+  #下拉刷新和上拉加载
+  easy_refresh: ^3.4.0
+  #刷新（本地 patch）
+  pull_to_refresh:
+    path: packages/pull_to_refresh-2.0.0
+  #震动（本地 patch）
+  gaimon:
+    path: packages/gaimon-1.4.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  #代码生成
+  build_runner: ^2.16.0
+  #json 序列化代码生成
+  json_serializable: ^6.14.1
+  #hive 适配器代码生成
+  hive_ce_generator: ^1.11.3
+
+flutter:
+  config:
+    enable-swift-package-manager: false
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/common/
+    - assets/images/svg/
+    - assets/lottie/loading/

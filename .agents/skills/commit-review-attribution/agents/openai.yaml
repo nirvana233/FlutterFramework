@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Message & AI Attribution"
+  short_description: "Conventional Commits + AI-Author/Review trailers；实现者与 reviewer 分写，未明确须先问"
+  default_prompt: "Use $commit-review-attribution before every git commit. Write Conventional Commits titles as type(scope): Chinese subject, optional body, then AI trailers: AI-Author + AI-Author-Model (who implemented), then AI-Review / AI-Reviewer / AI-Model (who reviewed). Split model vs reasoning on the last hyphen only when the suffix is confirmed as reasoning (e.g. GPT 5.6 Sol-Max -> Model GPT 5.6 Sol, Reasoning Max); preserve hyphens that belong to model names. Never leave confirmed reasoning glued in Model. Never mix implementer into AI-Model. Never infer AI-Review from context; if author or review status is unclear, stop and ask before committing."
